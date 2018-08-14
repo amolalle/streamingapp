@@ -2,6 +2,7 @@ package com.mh13.spark.apps
 
 import kafka.serializer.StringDecoder
 import org.apache.spark.SparkConf
+import org.apache.spark.sql.SparkSession
 import org.apache.spark.streaming.kafka.KafkaUtils
 import org.apache.spark.streaming.{Seconds, StreamingContext}
 
@@ -11,6 +12,7 @@ object KafkaSparkStreamingApp {
 
     val sparkConf = new SparkConf().setAppName("KafkaSparkStreamingApp")
     sparkConf.setIfMissing("spark.master", "local[*]")
+
     val ssc = new StreamingContext(sparkConf, Seconds(5))
 
     val topicsToListen = Set[String] {
