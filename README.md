@@ -2,4 +2,4 @@
 
 A sample spark streaming app
 
-* Used homebrew install zookeeper and kafka
+* Used homebrew to install zookeeper and kafka
